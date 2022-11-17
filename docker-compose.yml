@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+    volumes:
+      # Dev caddy file
+      - "./Caddyfile:/etc/caddy/Caddyfile"
+      - "caddy:/data"
+    ports:
+      # Dev port
+      - 9090:9090
+    networks:
+      - ionnet
+    environment:
+    - WWW_URL
+    - ADMIN_EMAIL
+
+volumes:
+  caddy:
+
+networks:
+  ionnet:
+    external: true
+    name: ionnet

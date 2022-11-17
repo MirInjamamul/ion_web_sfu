@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "config:base",
+    ":label(renovate)"
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+localhost:9090 {
+  root * /app/dist
+  file_server
+
+  tls internal
+
+  reverse_proxy /room.RoomSignal/Signal signal:5551 {
+  }
+  reverse_proxy /rtc.RTC/Signal signal:5551 {
+  }
+}
